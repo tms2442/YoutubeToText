@@ -15,9 +15,9 @@ def helloWorld():
 	res = YouTubeTranscriptApi.get_transcript(video)
 	formatted = []
 	for item in res:
-		formatted.append("Time in seconds: " + str(int(item['start'])) + " | " + item['text'])
+		formatted.append(str(int(item['start'])) + " | " + item['text'])
 	return jsonify(formatted)
-
+	
 
 if __name__ == '__main__':
 	app.run(debug=True)
